@@ -1,0 +1,135 @@
+/* Auth.css */
+
+/* 1. Main Container with Animated Mesh */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 2. The Glass Card */
+.auth-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 380px; /* Consistent width */
+  text-align: center;
+  color: white;
+}
+
+.auth-title {
+  margin-bottom: 30px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* 3. Unified Form Elements (The Fix) */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers items internally */
+  width: 100%;
+}
+
+.auth-input, 
+.auth-button {
+  width: 100%; /* Both take full width of the container */
+  box-sizing: border-box; /* Crucial: includes padding in the width */
+  margin: 10px 0;
+  height: 55px; /* Forced identical height for symmetry */
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* Input Specifics */
+.auth-input {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0 20px;
+  color: white;
+}
+
+.auth-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.auth-input:focus {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: #fff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Dropdown styling */
+select.auth-input {
+  cursor: pointer;
+  appearance: none; /* Removes default arrow to customize */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 15px;
+}
+
+/* Button Specifics */
+.auth-button {
+  background: #fff;
+  color: #e73c7e;
+  border: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  margin-top: 20px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.auth-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 20px rgba(255, 255, 255, 0.2);
+  background: #fdfdfd;
+}
+
+.auth-button:active {
+  transform: translateY(0);
+}
+
+/* Toggle Text */
+.auth-toggle {
+  margin-top: 25px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+.auth-toggle:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Ensures options are readable in the dropdown */
+option {
+  background: #333;
+  color: white;
+}
